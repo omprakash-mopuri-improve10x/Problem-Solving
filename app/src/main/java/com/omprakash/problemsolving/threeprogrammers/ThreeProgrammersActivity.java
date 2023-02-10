@@ -1,4 +1,4 @@
-package com.omprakash.problemsolving;
+package com.omprakash.problemsolving.threeprogrammers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import com.omprakash.problemsolving.databinding.ActivityThreeProgrammersBinding;
 
-public class ThreeProgrammersActivity extends AppCompatActivity implements ThreeProgrammersView{
+public class ThreeProgrammersActivity extends AppCompatActivity implements ThreeProgrammersView {
 
     private ActivityThreeProgrammersBinding binding;
 

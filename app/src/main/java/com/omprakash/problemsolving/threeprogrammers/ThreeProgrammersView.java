@@ -1,4 +1,4 @@
-package com.omprakash.problemsolving;
+package com.omprakash.problemsolving.threeprogrammers;
 
 public interface ThreeProgrammersView {
 
