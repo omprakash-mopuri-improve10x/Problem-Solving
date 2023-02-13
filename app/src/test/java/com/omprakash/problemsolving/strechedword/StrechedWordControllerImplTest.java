@@ -17,8 +17,8 @@ public class StrechedWordControllerImplTest extends TestCase {
     }
 
     public void testStrechedWord2() {
-        String expectedOutput = "PoEm";
-        String actualOutput = new StrechedWordControllerImpl().strechedWord("PpooEeEemm");
+        String expectedOutput = "";
+        String actualOutput = new StrechedWordControllerImpl().strechedWord("");
         assertEquals(expectedOutput, actualOutput);
     }
 

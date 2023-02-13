@@ -39,9 +39,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void handleStrechedWord() {
-     binding.strechedWordBtn.setOnClickListener(v -> {
-         Intent intent = new Intent(this, StrechedWordActivity.class);
-         startActivity(intent);
-     });
+        binding.strechedWordBtn.setOnClickListener(v -> {
+           Intent intent = new Intent(this, StrechedWordActivity.class);
+           startActivity(intent);
+        });
+    }
+
+    private void handleBiggestNumberInArray() {
+
     }
 }

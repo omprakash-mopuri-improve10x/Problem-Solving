@@ -6,12 +6,16 @@ public class ThreeProgrammersImpl implements ThreeProgrammersController {
 
     @Override
     public int getDiffMaxAndMin(String p1, String p2, String p3) {
-        int p1Salary = Integer.parseInt(p1);
-        int p2Salary = Integer.parseInt(p2);
-        int p3Salary = Integer.parseInt(p3);
-        int maxAmount = findMax(p1Salary, p2Salary, p3Salary);
-        int minAmount = findMin(p1Salary, p2Salary, p3Salary);
-        return maxAmount - minAmount;
+        try {
+            int p1Salary = Integer.parseInt(p1);
+            int p2Salary = Integer.parseInt(p2);
+            int p3Salary = Integer.parseInt(p3);
+            int maxAmount = findMax(p1Salary, p2Salary, p3Salary);
+            int minAmount = findMin(p1Salary, p2Salary, p3Salary);
+            return maxAmount - minAmount;
+        } catch (NumberFormatException ex) {
+            return -1;
+        }
     }
 
     @Override
