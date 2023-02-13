@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import com.omprakash.problemsolving.databinding.ActivityMainBinding;
 import com.omprakash.problemsolving.reversestring.ReverseStringActivity;
+import com.omprakash.problemsolving.strechedword.StrechedWordActivity;
 import com.omprakash.problemsolving.threeprogrammers.ThreeProgrammersActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         handle3Programmers();
         handleStringReverse();
+        handleStrechedWord();
     }
 
     private void handle3Programmers() {
@@ -34,5 +36,12 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, ReverseStringActivity.class);
             startActivity(intent);
         });
+    }
+
+    private void handleStrechedWord() {
+     binding.strechedWordBtn.setOnClickListener(v -> {
+         Intent intent = new Intent(this, StrechedWordActivity.class);
+         startActivity(intent);
+     });
     }
 }
