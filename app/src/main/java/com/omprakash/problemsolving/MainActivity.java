@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.omprakash.problemsolving.biggestnumberinarray.BiggestNumberInArrayActivity;
 import com.omprakash.problemsolving.databinding.ActivityMainBinding;
 import com.omprakash.problemsolving.reversestring.ReverseStringActivity;
 import com.omprakash.problemsolving.strechedword.StrechedWordActivity;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         handle3Programmers();
         handleStringReverse();
         handleStrechedWord();
+        handleBiggestNumberInArray();
     }
 
     private void handle3Programmers() {
@@ -46,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void handleBiggestNumberInArray() {
-
+        binding.biggestNumberBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(this, BiggestNumberInArrayActivity.class);
+            startActivity(intent);
+        });
     }
 }
