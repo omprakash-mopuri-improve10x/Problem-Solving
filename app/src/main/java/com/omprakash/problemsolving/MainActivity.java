@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import com.omprakash.problemsolving.biggestnumberinarray.BiggestNumberInArrayActivity;
 import com.omprakash.problemsolving.databinding.ActivityMainBinding;
+import com.omprakash.problemsolving.minutestoseconds.MinutesToSecondsActivity;
 import com.omprakash.problemsolving.reversestring.ReverseStringActivity;
 import com.omprakash.problemsolving.strechedword.StrechedWordActivity;
 import com.omprakash.problemsolving.threeprogrammers.ThreeProgrammersActivity;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         handleStringReverse();
         handleStrechedWord();
         handleBiggestNumberInArray();
+        handleMinutesToSeconds();
     }
 
     private void handle3Programmers() {
@@ -50,6 +52,13 @@ public class MainActivity extends AppCompatActivity {
     private void handleBiggestNumberInArray() {
         binding.biggestNumberBtn.setOnClickListener(v -> {
             Intent intent = new Intent(this, BiggestNumberInArrayActivity.class);
+            startActivity(intent);
+        });
+    }
+
+    private void handleMinutesToSeconds() {
+        binding.minsToSecsBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(this, MinutesToSecondsActivity.class);
             startActivity(intent);
         });
     }
