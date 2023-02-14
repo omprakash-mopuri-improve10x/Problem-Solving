@@ -12,6 +12,7 @@ import com.omprakash.problemsolving.minutestoseconds.MinutesToSecondsActivity;
 import com.omprakash.problemsolving.reversestring.ReverseStringActivity;
 import com.omprakash.problemsolving.strechedword.StrechedWordActivity;
 import com.omprakash.problemsolving.threeprogrammers.ThreeProgrammersActivity;
+import com.omprakash.problemsolving.vowels.VowelsActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         handleBiggestNumberInArray();
         handleMinutesToSeconds();
         handleFindTheBomb();
+        handleHowManyVowels();
     }
 
     private void handle3Programmers() {
@@ -68,6 +70,13 @@ public class MainActivity extends AppCompatActivity {
     private void handleFindTheBomb() {
         binding.findTheBombBtn.setOnClickListener(v -> {
             Intent intent = new Intent(this, FindTheBombActivity.class);
+            startActivity(intent);
+        });
+    }
+
+    private void handleHowManyVowels() {
+        binding.howManyVowelsBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(this, VowelsActivity.class);
             startActivity(intent);
         });
     }

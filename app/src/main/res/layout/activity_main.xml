@@ -66,4 +66,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mins_to_secs_btn" />
+
+    <Button
+        android:id="@+id/how_many_vowels_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="How Many Vowels"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/find_the_bomb_btn" />
 </androidx.constraintlayout.widget.ConstraintLayout>
