@@ -56,4 +56,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/biggest_number_btn" />
+
+    <Button
+        android:id="@+id/find_the_bomb_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Find The Bomb"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mins_to_secs_btn" />
 </androidx.constraintlayout.widget.ConstraintLayout>
