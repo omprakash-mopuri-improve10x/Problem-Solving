@@ -1,14 +1,12 @@
 package com.omprakash.problemsolving.minutestoseconds;
 
-public class MinutesToSecondsControllerImpl implements MinutesToSecondsController{
+import com.omprakash.problemsolving.InvalidInputException;
+
+public class MinutesToSecondsControllerImpl implements MinutesToSecondsController {
     @Override
-    public int getSeconds(String minutes) {
-        try {
-            int mins = Integer.parseInt(minutes);
-            int seconds = mins * 60;
-            return seconds;
-        } catch (Exception ex) {
-            return -1;
-        }
+    public int getSeconds(String minutes) throws Exception {
+        int mins = Integer.parseInt(minutes);
+        int seconds = mins * 60;
+        return seconds;
     }
 }
