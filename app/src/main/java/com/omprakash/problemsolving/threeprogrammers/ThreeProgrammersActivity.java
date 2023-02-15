@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.omprakash.problemsolving.InvalidInputException;
 import com.omprakash.problemsolving.databinding.ActivityThreeProgrammersBinding;
 
 public class ThreeProgrammersActivity extends AppCompatActivity implements ThreeProgrammersView {
@@ -27,9 +28,16 @@ public class ThreeProgrammersActivity extends AppCompatActivity implements Three
             String p2Salary = binding.programmer2SalaryTxt.getText().toString();
             String p3Salary = binding.programmer3SalaryTxt.getText().toString();
             if (p1Salary.equals("") == false && p2Salary.equals("") == false && p3Salary.equals("") == false) {
-                int diffMaxAndMin = new ThreeProgrammersImpl().getDiffMaxAndMin(p1Salary, p2Salary, p3Salary);
-                binding.showDiffTxt.setVisibility(View.VISIBLE);
-                binding.showDiffTxt.setText(String.valueOf(diffMaxAndMin));
+                int diffMaxAndMin = 0;
+                try {
+                    diffMaxAndMin = new ThreeProgrammersImpl().getDiffMaxAndMin(p1Salary, p2Salary, p3Salary);
+                    binding.showDiffTxt.setVisibility(View.VISIBLE);
+                    binding.showDiffTxt.setText(String.valueOf(diffMaxAndMin));
+                } catch (InvalidInputException e) {
+                    e.printStackTrace();
+                    binding.showDiffTxt.setText("Invalid Input");
+                }
+
             } else {
                 Toast.makeText(this, "Please enter details", Toast.LENGTH_SHORT).show();
             }

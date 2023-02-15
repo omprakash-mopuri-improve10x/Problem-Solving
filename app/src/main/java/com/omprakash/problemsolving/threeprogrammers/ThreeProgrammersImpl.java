@@ -1,21 +1,17 @@
 package com.omprakash.problemsolving.threeprogrammers;
 
-import com.omprakash.problemsolving.threeprogrammers.ThreeProgrammersController;
+import com.omprakash.problemsolving.InvalidInputException;
 
 public class ThreeProgrammersImpl implements ThreeProgrammersController {
 
     @Override
-    public int getDiffMaxAndMin(String p1, String p2, String p3) {
-        try {
+    public int getDiffMaxAndMin(String p1, String p2, String p3) throws InvalidInputException {
             int p1Salary = Integer.parseInt(p1);
             int p2Salary = Integer.parseInt(p2);
             int p3Salary = Integer.parseInt(p3);
             int maxAmount = findMax(p1Salary, p2Salary, p3Salary);
             int minAmount = findMin(p1Salary, p2Salary, p3Salary);
             return maxAmount - minAmount;
-        } catch (NumberFormatException ex) {
-            return -1;
-        }
     }
 
     @Override
