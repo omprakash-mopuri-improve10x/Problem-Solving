@@ -9,7 +9,7 @@ import android.widget.Toast;
 import com.omprakash.problemsolving.R;
 import com.omprakash.problemsolving.databinding.ActivityStrechedWordBinding;
 
-public class StrechedWordActivity extends AppCompatActivity implements StrechedWordView{
+public class StrechedWordActivity extends AppCompatActivity implements StrechedWordView {
 
     private ActivityStrechedWordBinding binding;
 
@@ -26,12 +26,15 @@ public class StrechedWordActivity extends AppCompatActivity implements StrechedW
     public void handleStrechedWord() {
         binding.strechedWordBtn.setOnClickListener(v -> {
             String word = binding.wordTxt.getText().toString();
-            if (word.equals("") == false) {
-                String newWord = new StrechedWordControllerImpl().strechedWord(word);
+            String newWord = null;
+            try {
+                newWord = new StrechedWordControllerImpl().strechedWord(word);
                 binding.showMessageTxt.setVisibility(View.VISIBLE);
                 binding.showMessageTxt.setText(newWord);
-            } else {
-                Toast.makeText(this, "Please enter the word", Toast.LENGTH_SHORT).show();
+            } catch (Exception e) {
+                e.printStackTrace();
+                binding.showMessageTxt.setVisibility(View.VISIBLE);
+                binding.showMessageTxt.setText("Invalid Input");
             }
         });
     }

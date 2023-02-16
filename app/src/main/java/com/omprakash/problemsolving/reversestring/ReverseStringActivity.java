@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.omprakash.problemsolving.R;
 import com.omprakash.problemsolving.databinding.ActivityReverseStringBinding;
@@ -25,9 +26,13 @@ public class ReverseStringActivity extends AppCompatActivity implements ReverseS
     public void handleReverseString() {
         binding.showRevStringBtn.setOnClickListener(v -> {
             String text = binding.inputTextTxt.getText().toString();
-            String result = new ReverseStringControllerImpl().revString(text);
-            binding.reverseTextTxt.setVisibility(View.VISIBLE);
-            binding.reverseTextTxt.setText(result);
+            if (text.equals("") == false) {
+                String result = new ReverseStringControllerImpl().revString(text);
+                binding.reverseTextTxt.setVisibility(View.VISIBLE);
+                binding.reverseTextTxt.setText(result);
+            } else {
+                Toast.makeText(this, "Enter the text", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 }
