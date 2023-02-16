@@ -9,7 +9,7 @@ import android.widget.Toast;
 import com.omprakash.problemsolving.R;
 import com.omprakash.problemsolving.databinding.ActivityVowelsBinding;
 
-public class VowelsActivity extends AppCompatActivity implements VowelsView{
+public class VowelsActivity extends AppCompatActivity implements VowelsView {
 
     private ActivityVowelsBinding binding;
 
@@ -26,12 +26,15 @@ public class VowelsActivity extends AppCompatActivity implements VowelsView{
     public void handleVowelCount() {
         binding.vowelCountBtn.setOnClickListener(v -> {
             String text = binding.inputTextTxt.getText().toString();
-            if (text.equals("") == false) {
-                int vowelCount = new VowelCountControllerImpl().getVowelCount(text);
+            int vowelCount = 0;
+            try {
+                vowelCount = new VowelCountControllerImpl().getVowelCount(text);
                 binding.showVowelCount.setVisibility(View.VISIBLE);
                 binding.showVowelCount.setText("Vowel Count is : " + vowelCount);
-            } else {
-                Toast.makeText(this, "Please enter the text", Toast.LENGTH_SHORT).show();
+            } catch (Exception e) {
+                e.printStackTrace();
+                binding.showVowelCount.setVisibility(View.VISIBLE);
+                binding.showVowelCount.setText("Invalid Input");
             }
         });
     }

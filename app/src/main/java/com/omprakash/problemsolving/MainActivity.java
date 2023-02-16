@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.omprakash.problemsolving.biggestnumberinarray.BiggestNumberInArrayActivity;
+import com.omprakash.problemsolving.convhrsminsintosecs.ConvHoursAndMinutesIntoSecondsActivity;
 import com.omprakash.problemsolving.databinding.ActivityMainBinding;
 import com.omprakash.problemsolving.findthebomb.FindTheBombActivity;
 import com.omprakash.problemsolving.minutestoseconds.MinutesToSecondsActivity;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         handleMinutesToSeconds();
         handleFindTheBomb();
         handleHowManyVowels();
+        handleConvHoursAndMinutesIntoSeconds();
     }
 
     private void handle3Programmers() {
@@ -77,6 +79,13 @@ public class MainActivity extends AppCompatActivity {
     private void handleHowManyVowels() {
         binding.howManyVowelsBtn.setOnClickListener(v -> {
             Intent intent = new Intent(this, VowelsActivity.class);
+            startActivity(intent);
+        });
+    }
+
+    private void handleConvHoursAndMinutesIntoSeconds() {
+        binding.convHrsMisIntoSecsBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(this, ConvHoursAndMinutesIntoSecondsActivity.class);
             startActivity(intent);
         });
     }
