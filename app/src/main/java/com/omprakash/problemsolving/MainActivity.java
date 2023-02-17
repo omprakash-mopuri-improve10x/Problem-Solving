@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.omprakash.problemsolving.biggestnumberinarray.BiggestNumberInArrayActivity;
+import com.omprakash.problemsolving.convagetodays.ConvertAgeToDaysActivity;
 import com.omprakash.problemsolving.convhrsminsintosecs.ConvHoursAndMinutesIntoSecondsActivity;
 import com.omprakash.problemsolving.databinding.ActivityMainBinding;
 import com.omprakash.problemsolving.findthebomb.FindTheBombActivity;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         handleFindTheBomb();
         handleHowManyVowels();
         handleConvHoursAndMinutesIntoSeconds();
+        handleConvAgeToDays();
     }
 
     private void handle3Programmers() {
@@ -86,6 +88,13 @@ public class MainActivity extends AppCompatActivity {
     private void handleConvHoursAndMinutesIntoSeconds() {
         binding.convHrsMisIntoSecsBtn.setOnClickListener(v -> {
             Intent intent = new Intent(this, ConvHoursAndMinutesIntoSecondsActivity.class);
+            startActivity(intent);
+        });
+    }
+
+    private void handleConvAgeToDays() {
+        binding.convAgeToDaysBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(this, ConvertAgeToDaysActivity.class);
             startActivity(intent);
         });
     }
